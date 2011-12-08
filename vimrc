@@ -28,3 +28,4 @@ set mouse=a
 set title
 let g:CommandTMaxFiles=15000
 set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*.gif
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
