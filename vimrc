@@ -1,11 +1,19 @@
 set number
 set nocompatible
+set vb t_vb=
 filetype plugin indent on
+set encoding=utf-8
+
+"" Whitespace
 set autoindent
 set smartindent
 set expandtab
-set vb t_vb=
+set backspace=indent,eol,start
+
+"" Searching
 set incsearch
+set smartcase
+
 colorscheme zenburn
 syntax on
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
