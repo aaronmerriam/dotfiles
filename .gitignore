@@ -4,3 +4,6 @@ vim/.VimballRecord
 vim/ruby/command-t
 vim/undodir/
 pentadactyl/info/
+vim/doc/command-t.txt
+vim/doc/tags
+vim/plugin/command-t.vim
