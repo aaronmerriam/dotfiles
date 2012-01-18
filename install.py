@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
   FILES = (
     (os.path.isfile, ('vimrc', 'profile', 'gitignore', 'gitconfig', 'pythonrc.py', 'colemak.vim')),
-    (os.path.isdir, ('vim', 'sh')),
+    (os.path.isdir, ('vim', )),
     )
   stamp = int(time.time())
 
