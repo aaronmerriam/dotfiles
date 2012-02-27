@@ -21,6 +21,13 @@ set smartindent
 set expandtab
 set backspace=indent,eol,start
 
+
+"" Lint / Syntax highlighting
+""set statusline+=%#warningmsg#
+""set statusline+=%{SyntasticStatuslineFlag()}
+""set statusline+=%*
+
+
 "" Searching
 set incsearch
 set smartcase
