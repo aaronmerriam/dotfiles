@@ -21,11 +21,18 @@ set smartindent
 set expandtab
 set backspace=indent,eol,start
 
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
 
-"" Lint / Syntax highlighting
-""set statusline+=%#warningmsg#
-""set statusline+=%{SyntasticStatuslineFlag()}
-""set statusline+=%*
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 "" Searching
@@ -34,8 +41,12 @@ set smartcase
 
 colorscheme zenburn
 syntax on
+
+" Use j/k for up down navigation in autocomplete
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+
+" Turn off arrow keys
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
@@ -47,11 +58,20 @@ noremap <Right> <NOP>
 set mouse=a
 "cnoreabbrev W w
 "cnoreabbrev Q q
+
+" Remap commands for when I hold the shift key too long
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+:command Qa qa
+
+" Shows document path and title in the terminal title
 set title
+
+" Increase command-t max number of files it will index
 let g:CommandTMaxFiles=15000
 set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*.gif
+
+" Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
