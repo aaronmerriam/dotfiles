@@ -4,6 +4,17 @@ set vb t_vb=
 filetype plugin indent on
 set encoding=utf-8
 
+" Auto read when a file is changed
+set autoread
+
+" Set 7 line buffer around cursor
+set so=7
+
+" Turn off backup/swap files
+set nobackup
+set nowb
+set noswapfile
+
 "" Colemak
 "noremap n j|noremap <C-w>n <C-w>j|noremap <C-w><C-n> <C-w>j
 "noremap e k|noremap <C-w>e <C-w>k|noremap <C-w><C-e> <C-w>k
@@ -56,15 +67,6 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 set mouse=a
-"cnoreabbrev W w
-"cnoreabbrev Q q
-
-" Remap commands for when I hold the shift key too long
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
-:command Qa qa
 
 " Shows document path and title in the terminal title
 set title
@@ -73,5 +75,24 @@ set title
 let g:CommandTMaxFiles=15000
 set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*.gif
 
+" Map <esc> to dismiss command-t
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" Remap commands for when I hold the shift key too long
+":command WQ wq
+":command Wq wq
+":command W w
+":command Q q
+":command Qa qa
+
+" Pathogen
+call pathogen#infect()
+
+" Syntastic
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_python_checker = "flake8"
+let g:syntastic_javascript_checker = "jshint"
