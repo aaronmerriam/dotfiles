@@ -73,6 +73,7 @@ set title
 
 " Increase command-t max number of files it will index
 let g:CommandTMaxFiles=15000
+let g:CommandTCancelMap=['<ESC>','<C-c>']
 set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*.gif
 
 " Map <esc> to dismiss command-t
@@ -80,6 +81,10 @@ let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" User c highlighting for Arduino and MPIDE files
+au BufRead,BufNewFile *.ino set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.pde set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
 
 " Remap commands for when I hold the shift key too long
 ":command WQ wq

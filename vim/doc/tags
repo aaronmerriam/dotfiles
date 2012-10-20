@@ -15,12 +15,16 @@
 :CommandT	command-t.txt	/*:CommandT*
 :CommandTBuffer	command-t.txt	/*:CommandTBuffer*
 :CommandTFlush	command-t.txt	/*:CommandTFlush*
+<<<<<<< Updated upstream
 :Errors	syntastic.txt	/*:Errors*
 :LAck	ack.txt	/*:LAck*
 :LAckAdd	ack.txt	/*:LAckAdd*
 :SyntasticCheck	syntastic.txt	/*:SyntasticCheck*
 :SyntasticErrors	syntastic.txt	/*:SyntasticErrors*
 :SyntasticToggleMode	syntastic.txt	/*:SyntasticToggleMode*
+=======
+:CommandTJumps	command-t.txt	/*:CommandTJumps*
+>>>>>>> Stashed changes
 PreviewBrowsers	preview.txt	/*PreviewBrowsers*
 PreviewBugs	preview.txt	/*PreviewBugs*
 PreviewCSSPath	preview.txt	/*PreviewCSSPath*
@@ -43,11 +47,14 @@ PreviewRonn	preview.txt	/*PreviewRonn*
 PreviewRonnExt	preview.txt	/*PreviewRonnExt*
 PreviewTextile	preview.txt	/*PreviewTextile*
 PreviewTextileExt	preview.txt	/*PreviewTextileExt*
+<<<<<<< Updated upstream
 SyntasticMake()	syntastic.txt	/*SyntasticMake()*
 ack	ack.txt	/*ack*
 ack-author	ack.txt	/*ack-author*
 ack-mappings	ack.txt	/*ack-mappings*
 ack.txt	ack.txt	/*ack.txt*
+=======
+>>>>>>> Stashed changes
 command-t	command-t.txt	/*command-t*
 command-t-authors	command-t.txt	/*command-t-authors*
 command-t-commands	command-t.txt	/*command-t-commands*
@@ -81,6 +88,7 @@ g:CommandTCursorStartMap	command-t.txt	/*g:CommandTCursorStartMap*
 g:CommandTDeleteMap	command-t.txt	/*g:CommandTDeleteMap*
 g:CommandTMatchWindowAtTop	command-t.txt	/*g:CommandTMatchWindowAtTop*
 g:CommandTMatchWindowReverse	command-t.txt	/*g:CommandTMatchWindowReverse*
+g:CommandTMaxCachedDirectories	command-t.txt	/*g:CommandTMaxCachedDirectories*
 g:CommandTMaxDepth	command-t.txt	/*g:CommandTMaxDepth*
 g:CommandTMaxFiles	command-t.txt	/*g:CommandTMaxFiles*
 g:CommandTMaxHeight	command-t.txt	/*g:CommandTMaxHeight*
@@ -90,6 +98,7 @@ g:CommandTSelectNextMap	command-t.txt	/*g:CommandTSelectNextMap*
 g:CommandTSelectPrevMap	command-t.txt	/*g:CommandTSelectPrevMap*
 g:CommandTToggleFocusMap	command-t.txt	/*g:CommandTToggleFocusMap*
 preview.txt	preview.txt	/*preview.txt*
+<<<<<<< Updated upstream
 syntastic	syntastic.txt	/*syntastic*
 syntastic-about	syntastic.txt	/*syntastic-about*
 syntastic-changelog	syntastic.txt	/*syntastic-changelog*
@@ -105,3 +114,5 @@ syntastic-options	syntastic.txt	/*syntastic-options*
 syntastic-statusline-flag	syntastic.txt	/*syntastic-statusline-flag*
 syntastic-syntax-checkers	syntastic.txt	/*syntastic-syntax-checkers*
 syntastic.txt	syntastic.txt	/*syntastic.txt*
+=======
+>>>>>>> Stashed changes
