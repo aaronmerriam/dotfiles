@@ -1,6 +1,9 @@
+" Show line numbers
 set number
 set nocompatible
 set vb t_vb=
+
+" Auto filetypes
 filetype plugin indent on
 set encoding=utf-8
 
@@ -15,17 +18,6 @@ set nobackup
 set nowb
 set noswapfile
 
-"" Colemak
-"noremap n j|noremap <C-w>n <C-w>j|noremap <C-w><C-n> <C-w>j
-"noremap e k|noremap <C-w>e <C-w>k|noremap <C-w><C-e> <C-w>k
-"noremap s h
-"noremap t l
-"
-"noremap f e
-"noremap k n
-"noremap K N 
-"noremap U <C-r>
-"
 "" Whitespace
 set autoindent
 set smartindent
@@ -78,6 +70,9 @@ set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*
 
 " Map <esc> to dismiss command-t
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+
+" Command-T ignore
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery

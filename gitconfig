@@ -36,4 +36,4 @@
 [push]
 	default = matching
 [core]
-	excludesfile = /Users/jillkatzenberger/.gitignore
+	excludesfile = ~/.gitignore
