@@ -12,6 +12,7 @@ try:
     import rlcompleter
     import atexit
 except ImportError:
+    assert False
     print("You need readline, rlcompleter, and atexit")
 
 readline.parse_and_bind("tab: complete")
@@ -21,7 +22,7 @@ readline.parse_and_bind("tab: complete")
 class Completer(object):
     def __init__(self):
         # Enable a History
-        self.HISTFILE=os.path.expanduser("%s/.pyhistory" % os.environ["HOME"])
+        self.HISTFILE = os.path.expanduser("%s/.pyhistory" % os.environ["HOME"])
 
         # Read the existing history if there is one
         if os.path.exists(self.HISTFILE):
@@ -37,6 +38,7 @@ class Completer(object):
 
 
 c = Completer()
+
 
 WELCOME=''
 # Color Support
@@ -73,7 +75,6 @@ class TermColors(dict):
         else:
             self.update(dict([(k, self.NoColor) for k,v in self.COLOR_TEMPLATES]))
 _c = TermColors()
-
 
 
 import sys
@@ -138,6 +139,7 @@ normal environment call `teardown_test_environment()`.
 
 Warning: DEBUG_PROPAGATE_EXCEPTIONS has been set to True.
 %(Normal)s""" % _c
+
 
 # Start an external editor with \e
 # http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/438813/
