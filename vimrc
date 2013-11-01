@@ -72,7 +72,7 @@ set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " Command-T ignore
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery

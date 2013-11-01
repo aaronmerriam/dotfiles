@@ -20,4 +20,5 @@ alias djsa="./manage.py startapp"
 alias djbdb="./manage.py backupdb"
 alias djrdb="./manage.py restoredb"
 alias la="ls -la"
+alias h="heroku"
 source $HOME/.local_profile
