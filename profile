@@ -21,4 +21,5 @@ alias djbdb="./manage.py backupdb"
 alias djrdb="./manage.py restoredb"
 alias la="ls -la"
 alias h="heroku"
+alias g="git status"
 source $HOME/.local_profile
