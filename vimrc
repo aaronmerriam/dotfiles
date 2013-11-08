@@ -66,13 +66,10 @@ set title
 " Increase command-t max number of files it will index
 let g:CommandTMaxFiles=15000
 let g:CommandTCancelMap=['<ESC>','<C-c>']
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/*,*.jpg,*.jpeg,*.png,*.gif
-
+" Command-T ignore
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**
 " Map <esc> to dismiss command-t
 let g:CommandTCancelMap=['<ESC>','<C-c>']
-
-" Command-T ignore
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
@@ -101,3 +98,6 @@ let g:syntastic_javascript_jshint_conf = $HOME . "/.vim/jshint.json"
 
 " Go language highlighting
 au BufRead,BufNewFile *.go set filetype=go
+
+" Remove trailing whitespace on save
+autocmd BufWritePre *.py :%s/\s\+$//e
