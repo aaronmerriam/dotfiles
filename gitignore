@@ -48,3 +48,4 @@ settings_local.py
 # Other #
 #########
 *.tmproj
+tmp/*
