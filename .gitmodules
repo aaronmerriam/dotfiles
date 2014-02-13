@@ -7,3 +7,6 @@
 [submodule "vim/bundle/vim-dart"]
 	path = vim/bundle/vim-dart
 	url = https://github.com/bartlomiejdanek/vim-dart.git
+[submodule "vim/bundle/handlebars"]
+	path = vim/bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git

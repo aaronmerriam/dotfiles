@@ -58,7 +58,10 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+" Enable sane highlighting
 set mouse=a
+" Enable copying with ctrl-c whil in visual mode
+vmap <C-C> "+y
 
 " Shows document path and title in the terminal title
 set title
@@ -101,3 +104,29 @@ au BufRead,BufNewFile *.go set filetype=go
 
 " Remove trailing whitespace on save
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Disable folding in markdown files
+let g:vim_markdown_folding_disabled=1
+
+" Teach jshint how to find the local `.jshintrc` file.
+function s:find_jshintrc(dir)
+    let l:found = globpath(a:dir, '.jshintrc')
+    if filereadable(l:found)
+        return l:found
+    endif
+
+    let l:parent = fnamemodify(a:dir, ':h')
+    if l:parent != a:dir
+        return s:find_jshintrc(l:parent)
+    endif
+
+    return "~/.jshintrc"
+endfunction
+
+function UpdateJsHintConf()
+    let l:dir = expand('%:p:h')
+    let l:jshintrc = s:find_jshintrc(l:dir)
+    let g:syntastic_javascript_jshint_conf = l:jshintrc
+endfunction
+
+au BufEnter * call UpdateJsHintConf()
