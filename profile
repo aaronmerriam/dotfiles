@@ -1,4 +1,8 @@
 SHDIR=~/.sh
+# Tell venv to use distribute over setuptools
+export VIRTUALENV_DISTRIBUTE=1
+# Don't compile to `.pyc` files
+export PYTHONDONTWRITEBYTECODE=1
 # Initializes nice pythonrc
 source $SHDIR/profile
 alias wimp="curl -L automation.whatismyip.com/n09230945.asp"
