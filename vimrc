@@ -96,7 +96,7 @@ call pathogen#infect()
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_flake8_args = "--ignore=E501"
-let g:syntastic_python_pylint_args = "--disable=C0111"
+let g:syntastic_python_pylint_args = "--disable=C0111 --disable=C0301 --disable=W0142 --disable=E1101 --disable=E103"
 let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_javascript_jshint_conf = $HOME . "/.vim/jshint.json"
 
