@@ -2,6 +2,16 @@ import time
 import os
 import os.path
 
+
+INSTALL_FILES = (
+    'vimrc', 'profile', 'gitignore', 'gitconfig', 'pythonrc.py', 'colemak.vim',
+    'pylintrc',
+)
+INSTALL_DIRS = (
+    'vim',
+)
+
+
 if __name__ == '__main__':
     df_path = os.getcwd()
     user_path = os.getenv('HOME')
@@ -9,8 +19,8 @@ if __name__ == '__main__':
     os.chdir(user_path)
 
     FILES = (
-        (os.path.isfile, ('vimrc', 'profile', 'gitignore', 'gitconfig', 'pythonrc.py', 'colemak.vim')),
-        (os.path.isdir, ('vim', )),
+        (os.path.isfile, INSTALL_FILES),
+        (os.path.isdir, INSTALL_DIRS),
     )
     stamp = int(time.time())
 

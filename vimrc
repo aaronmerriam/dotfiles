@@ -66,13 +66,19 @@ vmap <C-C> "+y
 " Shows document path and title in the terminal title
 set title
 
+" CTRL-P
+let g:ctrlp_map = '<leader>t'
+
 " Increase command-t max number of files it will index
-let g:CommandTMaxFiles=15000
-let g:CommandTCancelMap=['<ESC>','<C-c>']
+"let g:CommandTMaxFiles=15000
+"let g:CommandTCancelMap=['<ESC>','<C-c>']
 " Command-T ignore
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**,node_modules/**
+"set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**,node_modules/**
 " Map <esc> to dismiss command-t
-let g:CommandTCancelMap=['<ESC>','<C-c>']
+"let g:CommandTCancelMap=['<ESC>','<C-c>']
+
+" CTRLP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
@@ -80,6 +86,8 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " User c highlighting for Arduino and MPIDE files
 au BufRead,BufNewFile *.ino set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.pde set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.yaml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.yml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 
 " Remap commands for when I hold the shift key too long
 ":command WQ wq
@@ -96,8 +104,8 @@ call pathogen#infect()
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_flake8_args = "--ignore=E501"
-let g:syntastic_python_pylint_args = "--disable=C0111 --disable=C0301 --disable=W0142 --disable=E1101 --disable=E103"
-let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_python_pylint_args = "--disable=C0111 --disable=W0142 --disable=E1101 --generated-members=objects --disable=C0103 --disable=W0613"
+let g:syntastic_javascript_checkers = "jshint"
 let g:syntastic_javascript_jshint_conf = $HOME . "/.vim/jshint.json"
 
 " Go language highlighting
