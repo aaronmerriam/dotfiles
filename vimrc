@@ -73,7 +73,7 @@ let g:ctrlp_map = '<leader>t'
 "let g:CommandTMaxFiles=15000
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 " Command-T ignore
-"set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**,node_modules/**
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**,node_modules/**
 " Map <esc> to dismiss command-t
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 
