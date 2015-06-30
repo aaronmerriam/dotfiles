@@ -15,6 +15,10 @@ if exists('g:loaded_syntastic_haskell_scan_checker')
 endif
 let g:loaded_syntastic_haskell_scan_checker = 1
 
+if !exists('g:syntastic_haskell_scan_sort')
+    let g:syntastic_haskell_scan_sort = 1
+endif
+
 let s:save_cpo = &cpo
 set cpo&vim
 
@@ -26,8 +30,7 @@ function! SyntaxCheckers_haskell_scan_GetLocList() dict
     return SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'subtype': 'Style',
-        \ 'postprocess': ['sort'] })
+        \ 'subtype': 'Style' })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
@@ -37,4 +40,4 @@ call g:SyntasticRegistry.CreateAndRegisterChecker({
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
-" vim: set et sts=4 sw=4:
+" vim: set sw=4 sts=4 et fdm=marker:

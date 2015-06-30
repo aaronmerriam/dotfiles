@@ -66,19 +66,20 @@ vmap <C-C> "+y
 " Shows document path and title in the terminal title
 set title
 
-" CTRL-P
-let g:ctrlp_map = '<leader>t'
 
 " Increase command-t max number of files it will index
 "let g:CommandTMaxFiles=15000
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 " Command-T ignore
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,public/media/**,backups/**,backup/**,static/**,**/_build/**,**/build/**,node_modules/**
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,**/public/media/**,**/public/static/**,backups/**,**/_build/**,**/build/**,node_modules/**,tmp/**,.hypothesis/**,.tox/**
 " Map <esc> to dismiss command-t
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " CTRLP
+let g:ctrlp_map = '<leader>t'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+"let g:ctrlp_show_hidden = 1
+"let g:ctrlp_custom_ignore='node_modules\|.git'
 
 " Use jquery highlighting for jquery javascript files
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
@@ -100,7 +101,6 @@ au BufRead,BufNewFile *.yml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 call pathogen#infect()
 
 " Syntastic
-
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_flake8_args = "--ignore=E501"

@@ -49,3 +49,6 @@ settings_local.py
 #########
 *.tmproj
 tmp/*
+
+# Tox
+.tox

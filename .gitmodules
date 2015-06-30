@@ -10,3 +10,15 @@
 [submodule "vim/bundle/handlebars"]
 	path = vim/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/bundle/idris-vim"]
+	path = vim/bundle/idris-vim
+	url = git@github.com:idris-hackers/idris-vim.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git

@@ -1,12 +1,13 @@
+#!/usr/bin/env python
 import time
 import os
-import os.path
 
 
 INSTALL_FILES = (
     'vimrc', 'profile', 'gitignore', 'gitconfig', 'pythonrc.py', 'colemak.vim',
     'pylintrc',
 )
+
 INSTALL_DIRS = (
     'vim',
 )
@@ -29,6 +30,6 @@ if __name__ == '__main__':
             if exists_method(os.path.join(df_path, df)):
                 if os.path.islink(os.path.join(user_path, '.' + df)):
                     os.remove(os.path.join(user_path, '.' + df))
-                    if exists_method(os.path.join(user_path, '.' + df)):
-                        os.rename(os.path.join(user_path, '.' + df), os.path.join(user_path, '.' + str(stamp) + '.' + df))
-                        os.symlink(os.path.join(df_path, df), '.' + df)
+                if exists_method(os.path.join(user_path, '.' + df)):
+                    os.rename(os.path.join(user_path, '.' + df), os.path.join(user_path, '.' + str(stamp) + '.' + df))
+                os.symlink(os.path.join(df_path, df), '.' + df)
