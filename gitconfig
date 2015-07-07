@@ -38,3 +38,5 @@
 	default = matching
 [core]
 	excludesfile = ~/.gitignore
+[remotes]
+        default = origin upstream
