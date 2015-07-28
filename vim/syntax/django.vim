@@ -93,4 +93,8 @@ if version >= 508 || !exists("did_django_syn_inits")
   delcommand HiLink
 endif
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
 let b:current_syntax = "django"

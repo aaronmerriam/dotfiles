@@ -17,8 +17,9 @@
 	st = status
 	br = branch
 	co = checkout
+	cob = checkout -b
 	ls = ls-files
-    cleanup = !git branch --merged | grep -v master | xargs -n 1 git branch -d
+  cleanup = !git branch --merged | grep -v master | xargs -n 1 git branch -d
 # super-powered
 	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort
 	all = add -A
