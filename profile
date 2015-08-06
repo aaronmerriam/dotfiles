@@ -38,4 +38,6 @@ alias up6="cd ../../../../../.."
 alias up7="cd ../../../../../../.."
 alias up8="cd ../../../../../../../.."
 alias up9="cd ../../../../../../../../.."
+alias restart_nginx="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist"
+alias p="which ipython && ipython || python"
 source $HOME/.local_profile
