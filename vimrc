@@ -50,14 +50,14 @@ inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 " Turn off arrow keys
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"inoremap <Up> <NOP>
+"inoremap <Down> <NOP>
+"inoremap <Left> <NOP>
+"inoremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
 " Enable sane highlighting
 set mouse=a
 " Enable copying with ctrl-c whil in visual mode
@@ -71,7 +71,7 @@ set title
 "let g:CommandTMaxFiles=15000
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 " Command-T ignore
-set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,**/public/media/**,**/public/static/**,backups/**,**/_build/**,**/build/**,node_modules/**,tmp/**,.hypothesis/**,.tox/**
+set wildignore=.git/*,*.zip,*.tar.gz,*.svn,.svn,*.pyc,tmp/**,*.jpg,*.jpeg,*.png,*.gif,**/public/media/**,**/public/static/**,backups/**,**/_build/**,**/build/**,**/node_modules/**,tmp/**,.hypothesis/**,.tox/**,**/logs/**
 " Map <esc> to dismiss command-t
 "let g:CommandTCancelMap=['<ESC>','<C-c>']
 
@@ -89,6 +89,8 @@ au BufRead,BufNewFile *.ino set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.pde set ft=cpp syntax=cpp tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.yaml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.yml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.rb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.erb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
 
 " Remap commands for when I hold the shift key too long
 ":command WQ wq
@@ -139,3 +141,18 @@ function UpdateJsHintConf()
 endfunction
 
 au BufEnter * call UpdateJsHintConf()
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
