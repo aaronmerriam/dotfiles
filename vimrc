@@ -3,8 +3,7 @@ set number
 set nocompatible
 set vb t_vb=
 
-" Auto filetypes
-filetype plugin indent on
+" Encoding
 set encoding=utf-8
 
 " Auto read when a file is changed
@@ -43,7 +42,6 @@ set incsearch
 set smartcase
 
 colorscheme zenburn
-syntax on
 
 " Use j/k for up down navigation in autocomplete
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
@@ -100,7 +98,11 @@ au BufRead,BufNewFile *.erb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
 ":command Qa qa
 
 " Pathogen
-call pathogen#infect()
+execute pathogen#infect()
+" Auto syntax highlighting (pathogen)
+syntax on
+" Auto filetypes (pathogen)
+filetype plugin indent on
 
 " Syntastic
 let g:syntastic_check_on_open = 1
@@ -118,6 +120,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Disable folding in markdown files
 let g:vim_markdown_folding_disabled=1
+
+" Disable folding of javascript
+let b:javascript_fold=0
 
 " Teach jshint how to find the local `.jshintrc` file.
 function s:find_jshintrc(dir)

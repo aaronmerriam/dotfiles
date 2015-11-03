@@ -21,6 +21,10 @@ alias djsa="./manage.py startapp"
 alias djbdb="./manage.py backupdb"
 alias djrdb="./manage.py restoredb"
 alias djks="pgrep -f runserver && pkill -f runserver"
+# Rails
+alias rdbm="bundle exec rake db:migrate"
+alias rdbs="bundle exec rake db:setup"
+# Git
 alias gl="git log --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit"
 alias la="ls -lah"
 alias h="heroku"
