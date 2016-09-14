@@ -89,6 +89,8 @@ au BufRead,BufNewFile *.yaml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.yml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.rb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.erb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.html set tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.sol set ft=solidity syntax=solidity tabstop=4 shiftwidth=4
 
 " Remap commands for when I hold the shift key too long
 ":command WQ wq
@@ -106,11 +108,11 @@ filetype plugin indent on
 
 " Syntastic
 let g:syntastic_check_on_open = 1
-let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--ignore=E501"
 let g:syntastic_python_pylint_args = "--disable=C0111 --disable=W0142 --disable=E1101 --generated-members=objects --disable=C0103 --disable=W0613"
-let g:syntastic_javascript_checkers = "jshint"
-let g:syntastic_javascript_jshint_conf = $HOME . "/.vim/jshint.json"
+let g:syntastic_javascript_checkers = "eslint"
+"let g:syntastic_javascript_jshint_args = '--config /Users/piper/.vim/jshint.json'
 
 " Go language highlighting
 au BufRead,BufNewFile *.go set filetype=go
@@ -161,3 +163,13 @@ endif
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Use system clipboard for everything
+set clipboard=unnamed " Default to system clipboard.
+
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction

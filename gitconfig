@@ -1,6 +1,7 @@
 [user]
 	name = Piper Merriam
 	email = pipermerriam@gmail.com
+	signingkey = CEBE822F
 [color]
 	ui = auto
 	diff = auto
