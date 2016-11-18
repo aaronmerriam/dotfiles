@@ -1,1 +1,1 @@
-/Users/piper/.vimrc
+/Users/piper/sites/dotfiles/vimrc

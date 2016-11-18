@@ -50,3 +50,5 @@ alias pw="which ipython"
 alias gcd="git commit -m \"dirty\""
 alias gptmr="gush && git push --tags && make release"
 source $HOME/.local_profile
+
+export PATH="~/.yarn/bin:$PATH"

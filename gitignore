@@ -56,3 +56,9 @@ tmp/*
 
 # Pytest
 **/.cache/**
+
+# Meteor
+**/.meteor/dev_bundle
+
+# Populus Configuration
+populus.ini
