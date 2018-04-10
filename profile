@@ -1,11 +1,23 @@
 SHDIR=~/.sh
-# Tell venv to use distribute over setuptools
-export VIRTUALENV_DISTRIBUTE=1
+
+# Initialize pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Tell virtualenvwrapper to use python3
+export VIRTUALENVWRAPPER_PYTHON="$(command \which python3.6)"
+export VIRTUALENV_PYTHON="$(command \which python3.6)"
+export VIRTUALENVWRAPPER_VIRTUALENV="$(command \which virtualenv3.6)"
+
 # Don't compile to `.pyc` files
 export PYTHONDONTWRITEBYTECODE=1
+
 # Initializes nice pythonrc
 source $SHDIR/profile
 alias wimp="curl -L automation.whatismyip.com/n09230945.asp"
+
+# Yubico challenge response
+alias ybc="ykchalresp \`pbpaste\`"
+
 # Django stuff
 alias dj="./manage.py"
 alias djdm="./manage.py datamigration"
@@ -21,9 +33,11 @@ alias djsa="./manage.py startapp"
 alias djbdb="./manage.py backupdb"
 alias djrdb="./manage.py restoredb"
 alias djks="pgrep -f runserver && pkill -f runserver"
+
 # Rails
 alias rdbm="bundle exec rake db:migrate"
 alias rdbs="bundle exec rake db:setup"
+
 # Git
 alias gl="git log --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit"
 alias la="ls -lah"
@@ -48,7 +62,11 @@ alias restart_nginx="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx
 alias p="which ipython && $(which ipython) || python"
 alias pw="which ipython"
 alias gcd="git commit -m \"dirty\""
-alias gptmr="gush && git push --tags && make release"
+alias mro="gush && git push --tags && make release"
+alias mru="gush && gups && git push upstream --tags && make release"
+alias pynit="pip install -e . -r requirements* ipython pbdpp pytest-xdist"
 source $HOME/.local_profile
 
 export PATH="~/.yarn/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"

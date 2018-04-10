@@ -90,7 +90,10 @@ au BufRead,BufNewFile *.yml set ft=yaml syntax=yaml tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.rb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.erb set ft=ruby syntax=ruby tabstop=2 shiftwidth=2
 au BufRead,BufNewFile *.html set tabstop=2 shiftwidth=2
-au BufRead,BufNewFile *.sol set ft=solidity syntax=solidity tabstop=4 shiftwidth=4
+au BufRead,BufNewFile *.sol set ft=solidity syntax=solidity tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.json set ft=json syntax=json tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.hjson set ft=conf syntax=conf tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.pyx set ft=cython syntax=cython tabstop=4 shiftwidth=4
 
 " Remap commands for when I hold the shift key too long
 ":command WQ wq
